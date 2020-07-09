@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Jumpchain.Models.JumperListItem>
+
+@{
+    ViewBag.Title = "JumperIndex";
+}
+
+<h2>JumperIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "JumperCreate")
+</p>
+@if (TempData.ContainsKey("SaveResult")) //Shows the Jumper Created popup
+{
+    <div class="alert alert-success fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.JumperName)
+        </th>
+        <th>
+            
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JumperNotes)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JumperName)
+            </td>
+            <td>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JumperNotes)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "JumperEdit", new { id=item.JumperID }) |
+                @Html.ActionLink("Details", "JumperDetails", new { id=item.JumperID }) |
+                @Html.ActionLink("Send Home", "JumperDelete", new { id=item.JumperID })
+            </td>
+        </tr>
+    }
+
+</table>

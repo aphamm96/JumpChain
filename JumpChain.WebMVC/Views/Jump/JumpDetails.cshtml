@@ -1,0 +1,74 @@
+﻿@model Jumpchain.Models.Jump.JumpDetail
+
+@{
+    ViewBag.Title = "JumpDetails";
+}
+
+<h2>JumpDetails</h2>
+
+<div>
+    <h4>JumpDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.JumpID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JumpID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JumpNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JumpNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JumpLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JumpLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Companions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Companions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JumpPerks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JumpPerks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JumpItems)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JumpItems)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Drawbacks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Drawbacks)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

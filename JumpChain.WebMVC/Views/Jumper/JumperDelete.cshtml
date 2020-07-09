@@ -1,0 +1,48 @@
+﻿@model Jumpchain.Models.JumperDetail
+
+@{
+    ViewBag.Title = "JumperDelete";
+}
+
+<h2>JumperDelete</h2>
+
+<h3>Are you sure you want to send this Jumper home? This action cannot be undone!</h3>
+<div>
+    <h4>Jumper Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.JumperID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JumperID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JumperName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JumperName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JumperNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JumperNotes)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Send Home" class="btn btn-default" /> |
+            @Html.ActionLink("Back to Jumpers", "JumperIndex")
+        </div>
+    }
+</div>

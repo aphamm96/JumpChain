@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Jumpchain.Models.Jump.JumpListItem>
+
+@{
+    ViewBag.Title = "JumpIndex";
+}
+
+<h2>JumpIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.JumpID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JumpNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JumpLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Companions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JumpPerks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JumpItems)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Drawbacks)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.JumpID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JumpNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JumpLocation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Companions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JumpPerks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JumpItems)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Drawbacks)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

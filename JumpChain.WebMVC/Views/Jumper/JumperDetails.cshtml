@@ -1,0 +1,18 @@
+﻿@model Jumpchain.Models.JumperDetail
+
+@{
+    ViewBag.Title = "JumperDetails";
+}
+
+<h2>JumperDetails</h2>
+
+<div>
+    <h4>JumperDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.JumperID }) |
+    @Html.ActionLink("Back to List", "JumperIndex")
+</p>
