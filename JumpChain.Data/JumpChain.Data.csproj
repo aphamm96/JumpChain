@@ -69,6 +69,10 @@
     <Compile Include="Migrations\202007092003479_ForeignKeyEdits.Designer.cs">
       <DependentUpon>202007092003479_ForeignKeyEdits.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007151913565_changedJumpLocationToString.cs" />
+    <Compile Include="Migrations\202007151913565_changedJumpLocationToString.Designer.cs">
+      <DependentUpon>202007151913565_changedJumpLocationToString.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -85,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007092003479_ForeignKeyEdits.resx">
       <DependentUpon>202007092003479_ForeignKeyEdits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007151913565_changedJumpLocationToString.resx">
+      <DependentUpon>202007151913565_changedJumpLocationToString.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

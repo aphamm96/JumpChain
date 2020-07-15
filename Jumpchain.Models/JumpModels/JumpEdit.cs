@@ -13,7 +13,7 @@ namespace Jumpchain.Models.JumpModels
         [Display(Name = "Jump Number")]
         public int JumpNumber { get; set; }
         [Display(Name = "Setting")]
-        public int JumpLocation { get; set; }
+        public string JumpLocation { get; set; }
         [Display(Name = "Companions Taken")]
         public string Companions { get; set; } //Can these be set to Lists? Will have to research. String will work for now
         [Display(Name = "Perks Taken")]

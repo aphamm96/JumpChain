@@ -13,6 +13,6 @@ namespace Jumpchain.Models.JumpModels
         [Display(Name = "Jump Number")]
         public int JumpNumber { get; set; }
         [Display(Name = "Setting")]
-        public int JumpLocation { get; set; }
+        public string JumpLocation { get; set; }
     }
 }
