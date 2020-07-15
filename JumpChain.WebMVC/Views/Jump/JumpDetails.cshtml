@@ -1,10 +1,10 @@
-﻿@model Jumpchain.Models.Jump.JumpDetail
+﻿@model Jumpchain.Models.JumpModels.JumpDetail
 
 @{
     ViewBag.Title = "JumpDetails";
 }
 
-<h2>JumpDetails</h2>
+<h2>Jump Information</h2>
 
 <div>
     <h4>JumpDetail</h4>
@@ -69,6 +69,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit this jump", "JumpEdit", new { id = Model.JumpID }) |
+    @Html.ActionLink("Return to Jumpers", "JumperIndex", "Jumper")
 </p>

@@ -12,14 +12,14 @@ namespace JumpChain.WebMVC.Controllers
     public class JumpController : Controller
     {
         // GET: Jump
-        public ActionResult JumpIndex()
-        {
-            var jumperId = int.Parse(User.Identity.GetUserId());
-            var service = new JumpService(jumperId);
-            var model = service.GetJumps();
+        //public ActionResult JumpIndex()
+        //{
+        //    var jumperId = int.Parse(User.Identity.GetUserId());
+        //    var service = new JumpService(jumperId);
+        //    var model = service.GetJumps();
 
-            return View(model);
-        }
+        //    return View(model);
+        //}
         public ActionResult JumpCreate()
         {
             return View();
@@ -37,7 +37,7 @@ namespace JumpChain.WebMVC.Controllers
             if (service.CreateJump(model))
             {
                 TempData["SaveResult"] = "Jump Created"; //Creates the Jump Created popup
-                return RedirectToAction("JumpIndex");
+                return RedirectToAction("JumperIndex", "Jumper");
             };
             ModelState.AddModelError("", "Jump could not be created.");
             return View(model);
@@ -85,7 +85,7 @@ namespace JumpChain.WebMVC.Controllers
             if (service.UpdateJump(model))
             {
                 TempData["SaveResult"] = "Jump updated";
-                return RedirectToAction("JumpIndex");
+                return RedirectToAction("JumperIndex", "Jumper");
             }
 
             ModelState.AddModelError("", "Jump could not be updated.");
@@ -111,13 +111,12 @@ namespace JumpChain.WebMVC.Controllers
 
             TempData["SaveResult"] = "Jump has erased.";
 
-            return RedirectToAction("JumpIndex");
+            return RedirectToAction("JumperIndex", "Jumper");
         }
 
         private JumpService CreateJumpService()
         {
-            var jumperId = int.Parse(User.Identity.GetUserId());
-            var service = new JumpService(jumperId);
+            var service = new JumpService();
             return service;
         }
     }

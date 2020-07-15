@@ -4,10 +4,10 @@
     ViewBag.Title = "JumperIndex";
 }
 
-<h2>JumperIndex</h2>
+<h2>Your Jumpers</h2>
 
 <p>
-    @Html.ActionLink("Create New", "JumperCreate")
+    @Html.ActionLink("Summon a Jumper", "JumperCreate")
 </p>
 @if (TempData.ContainsKey("SaveResult")) //Shows the Jumper Created popup
 {
@@ -18,7 +18,7 @@
         @TempData["SaveResult"]
     </div>
 }
-<table class="table">
+<table class="table" style="        background-color:#01126C">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.JumperName)
@@ -39,6 +39,7 @@
                 @Html.DisplayFor(modelItem => item.JumperName)
             </td>
             <td>
+                @Html.ActionLink("List of Jumps", "JumpList", new { id = item.JumperID})
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.JumperNotes)
@@ -46,7 +47,7 @@
             <td>
                 @Html.ActionLink("Edit", "JumperEdit", new { id=item.JumperID }) |
                 @Html.ActionLink("Details", "JumperDetails", new { id=item.JumperID }) |
-                @Html.ActionLink("Send Home", "JumperDelete", new { id=item.JumperID })
+                @Html.ActionLink("Send Home", "JumperDelete", new { id=item.JumperID }, new { style = "color:red" })
             </td>
         </tr>
     }

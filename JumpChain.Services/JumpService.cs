@@ -10,12 +10,7 @@ namespace JumpChain.Services
 {
     public class JumpService
     {
-        private readonly int _jumperId;
 
-        public JumpService(int jumperId)
-        {
-            _jumperId = jumperId;
-        }
         public bool CreateJump(JumpCreate model)
         {
             var entity =
@@ -36,24 +31,19 @@ namespace JumpChain.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public IEnumerable<JumpListItem> GetJumps()
+        public IEnumerable<JumpListItem> GetJumps(int JumpID)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
                     .Jumps
-                    .Where(e => e.JumperID == _jumperId)
                     .Select(
                         e =>
                         new JumpListItem
                         {
                             JumpNumber = e.JumpNumber,
                             JumpLocation = e.JumpLocation,
-                            Companions = e.Companions,
-                            JumpPerks = e.JumpPerks,
-                            JumpItems = e.JumpItems,
-                            Drawbacks = e.Drawbacks
                         }
                         );
                 return query.ToArray();
@@ -66,11 +56,17 @@ namespace JumpChain.Services
                 var entity =
                     ctx
                     .Jumps
-                    .Single(e => e.JumpID == id && e.JumperID == _jumperId);
+                    .Single(e => e.JumpID == id);
                 return
                     new JumpDetail
                     {
-                        //This is part of the stretch goal, but the process can be applied to the Jump Service
+                        JumpID = entity.JumpID,
+                        JumpNumber = entity.JumpNumber,
+                        JumpLocation = entity.JumpLocation,
+                        Companions = entity.Companions,
+                        JumpPerks = entity.JumpPerks,
+                        JumpItems = entity.JumpItems,
+                        Drawbacks = entity.Drawbacks,
                     };
             }
         }
@@ -81,7 +77,7 @@ namespace JumpChain.Services
                 var entity =
                     ctx
                     .Jumps
-                    .Single(e => e.JumpID == model.JumpID && e.JumperID == _jumperId);
+                    .Single(e => e.JumpID == model.JumpID);
 
                 entity.JumpNumber = model.JumpNumber;
                 entity.JumpLocation = model.JumpLocation;
@@ -100,7 +96,7 @@ namespace JumpChain.Services
                 var entity =
                     ctx
                     .Jumps
-                    .Single(e => e.JumpID == jumpId && e.JumperID == _jumperId);
+                    .Single(e => e.JumpID == jumpId);
 
                 ctx.Jumps.Remove(entity);
 

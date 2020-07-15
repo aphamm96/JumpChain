@@ -248,6 +248,7 @@
     <Content Include="Views\Jump\JumpDetails.cshtml" />
     <Content Include="Views\Jump\JumpEdit.cshtml" />
     <Content Include="Views\Jump\JumpDelete.cshtml" />
+    <Content Include="Views\Jumper\JumpList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -58,7 +58,7 @@ namespace JumpChain.WebMVC.Controllers
         }
 
         [HttpGet]
-        public ActionResult JumperJumps(int id)
+        public ActionResult JumpList(int id)
         {
             var svc = CreateJumperService();
             var model = svc.GetJumpsForJumper(id);
