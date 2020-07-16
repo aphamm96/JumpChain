@@ -4,15 +4,16 @@
     ViewBag.Title = "JumpList";
 }
 
-<h2>List of Jumps</h2>
-
 <p>
     @Html.ActionLink("Create New Jump", "JumpCreate", "Jump")
 </p>
 <table class="table" style="        background-color: #01126C;
+        margin-top: 1em;
         padding: 0.5em;
         color: #E8E8E8;
-        text-shadow: 3px 3px 0 black;">
+        text-shadow: 3px 3px 0 black;
+        border: solid 2px #E8E8E8;
+        border-radius: 5px">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.JumpID)

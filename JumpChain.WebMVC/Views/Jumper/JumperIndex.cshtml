@@ -4,7 +4,15 @@
     ViewBag.Title = "JumperIndex";
 }
 
-<h2>Your Jumpers</h2>
+    <h2 style="background-color: #01126C;
+        margin-top: 1em;
+        padding: 0.5em;
+        color: #E8E8E8;
+        text-shadow: 3px 3px 0 black;
+        border: solid 2px #E8E8E8;
+        border-radius: 5px">
+        Your Jumpers
+    </h2>
 
 <p>
     @Html.ActionLink("Summon a Jumper", "JumperCreate")
@@ -21,13 +29,15 @@
 <table class="table" style="        background-color: #01126C;
         padding: 0.5em;
         color: #E8E8E8;
-        text-shadow: 3px 3px 0 black;">
+        text-shadow: 3px 3px 0 black;
+        border: solid 2px #E8E8E8;
+        border-radius: 5px">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.JumperName)
         </th>
         <th>
-            
+            <p>List of Jumps</p>
         </th>
         <th>
             @Html.DisplayNameFor(model => model.JumperNotes)
@@ -42,15 +52,15 @@
                 @Html.DisplayFor(modelItem => item.JumperName)
             </td>
             <td>
-                @Html.ActionLink("List of Jumps", "JumpList", new { id = item.JumperID})
+                @Html.ActionLink("Link to Jumps", "JumpList", new { id = item.JumperID })
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.JumperNotes)
             </td>
             <td>
-                @Html.ActionLink("Edit", "JumperEdit", new { id=item.JumperID }) |
-                @Html.ActionLink("Details", "JumperDetails", new { id=item.JumperID }) |
-                @Html.ActionLink("Send Home", "JumperDelete", new { id=item.JumperID }, new { style = "color:red" })
+                @Html.ActionLink("Edit Jumper", "JumperEdit", new { id = item.JumperID }) |
+                @*@Html.ActionLink("Details", "JumperDetails", new { id = item.JumperID }) |*@
+                @Html.ActionLink("Send Home", "JumperDelete", new { id = item.JumperID }, new { style = "color:red" })
             </td>
         </tr>
     }

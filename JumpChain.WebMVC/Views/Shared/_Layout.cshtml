@@ -21,7 +21,6 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Jumpers", "JumperIndex", "Jumper")</li>
@@ -37,8 +36,8 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Jumpchain</p>
+        <footer style="text-align:right">
+            <p>&copy; Jumpchain @DateTime.Now.Year -   |  @Html.ActionLink("Contact Developer", "Contact", "Home")</p>
         </footer>
     </div>
 

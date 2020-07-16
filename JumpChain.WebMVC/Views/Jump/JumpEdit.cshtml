@@ -4,17 +4,19 @@
     ViewBag.Title = "JumpEdit";
 }
 
-<h2>Edit Jump</h2>
-
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal" style="        background-color: #01126C;
+        margin-top: 1em;
         padding: 0.5em;
         color: #E8E8E8;
-        text-shadow: 3px 3px 0 black;">
+        text-shadow: 3px 3px 0 black;
+        border: solid 2px #E8E8E8;
+        border-radius: 5px">
+        <h4>Edit your jump</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.JumpID)
@@ -69,7 +71,8 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save Changes" class="btn btn-default" style="background-color: #00476B;
+        color: #E8E8E8; box-shadow:2px 3px black" />
             </div>
         </div>
     </div>
